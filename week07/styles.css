@@ -1,0 +1,66 @@
+/* START border-box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* END border-box fix */
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex; /* set max width of .container but display body as flex and center it's contents */
+  justify-content: center; /* this centers the contents of the body like . container */
+  background-color: #FFB6C1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* Add padding to all of the .container child elements */ 
+.container > * {
+  padding: 20px;
+}
+
+.container{
+  color: #FFF;
+  display: flex; /* use flex box */
+  flex-wrap: wrap; /* wrap */
+  max-width: 1000px;
+}
+
+header {
+  background: #87CEEB;
+  flex: 1 0 100%; /* grow on, shrink off, span width of browser */
+  order: 1; /* display order regardless of html struture */
+  top: 0px;
+  position: sticky;
+}
+main {
+background: #6D8196;
+flex: 1 1 500px;
+order: 3;
+}
+
+nav {
+  background: #5F9EA0;
+  flex: 1 0 200px; /* grow but not shrink less than basis */
+  order: 2;
+}
+aside {
+  background: #2E8B57;
+  flex: 1 0 200px; /* grow but not shrink less than basis */
+  order: 4;
+}
+
+form {
+  text-align: center;
+}
+
+footer {
+  background: #483D8B;
+    flex: 1 0 100%; /* grow on, shrink off, span width of browser */
+    order: 5;
+}
